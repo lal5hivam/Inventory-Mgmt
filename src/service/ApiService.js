@@ -3,7 +3,7 @@ import CryptoJS from "crypto-js";
 
 export default class ApiService {
 
-    static BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:5050/api";
+    static BASE_URL = process.env.REACT_APP_API_BASE_URL || "https://inventory-mgmt-mex3.onrender.com/api";
     static ENCRYPTION_KEY = process.env.REACT_APP_ENCRYPTION_KEY || "phegon-dev-inventory";
 
 
