@@ -33,7 +33,6 @@ yarn-error.log*
 /backend/mvnw
 /backend/mvnw.cmd
 backend/src/main/resources/application-dev.properties
-backend/src/main/resources/application-prod.properties
 backend/src/main/resources/application-local.properties
 
 # Product images (uploaded files)
