@@ -1,0 +1,61 @@
+# Production Environment Configuration - EXAMPLE FILE
+# This file shows all required environment variables for production deployment
+# Set these as environment variables in your deployment platform
+
+# ==========================================
+# REQUIRED ENVIRONMENT VARIABLES
+# ==========================================
+
+# Server Configuration
+SERVER_PORT=8080
+
+# CORS Configuration - CRITICAL!
+# Set this to your production frontend URL(s), comma-separated
+# Example: CORS_ALLOWED_ORIGINS=https://yourdomain.com,https://www.yourdomain.com
+CORS_ALLOWED_ORIGINS=https://your-production-frontend-url.com
+
+# Database Configuration - REQUIRED
+# Example: DB_URL=jdbc:mysql://your-db-host:3306/inventory_db?useSSL=true&requireSSL=true
+DB_URL=jdbc:mysql://your-database-host:3306/inventory_db
+DB_USERNAME=your_db_username
+DB_PASSWORD=your_strong_db_password
+
+# JWT Configuration - REQUIRED
+# Generate a strong secret with: openssl rand -base64 32
+# This MUST be a strong random string (minimum 256 bits)
+JWT_SECRET=your_super_strong_jwt_secret_here
+JWT_EXPIRATION_MS=86400000
+
+# ==========================================
+# DEPLOYMENT PLATFORM EXAMPLES
+# ==========================================
+
+# --- Railway.app ---
+# Set environment variables in Railway dashboard:
+# SPRING_PROFILES_ACTIVE=prod
+# DB_URL=your_railway_db_url
+# DB_USERNAME=your_db_user
+# DB_PASSWORD=your_db_password
+# JWT_SECRET=your_jwt_secret
+# CORS_ALLOWED_ORIGINS=https://your-frontend.vercel.app
+
+# --- Render.com ---
+# Add environment variables in Render dashboard
+# Same variables as above
+
+# --- AWS Elastic Beanstalk ---
+# Set via .ebextensions/environment.config or EB console
+
+# --- Heroku ---
+# Set via: heroku config:set VARIABLE=value
+# Example: heroku config:set JWT_SECRET=your_secret
+
+# --- Docker ---
+# Pass via docker run -e or docker-compose.yml environment section
+# docker run -e DB_URL=... -e DB_USERNAME=... -e DB_PASSWORD=... -e JWT_SECRET=... -e CORS_ALLOWED_ORIGINS=...
+
+# --- Kubernetes ---
+# Use ConfigMaps for non-sensitive data and Secrets for sensitive data
+# kubectl create secret generic app-secrets \
+#   --from-literal=DB_PASSWORD=your_password \
+#   --from-literal=JWT_SECRET=your_secret
