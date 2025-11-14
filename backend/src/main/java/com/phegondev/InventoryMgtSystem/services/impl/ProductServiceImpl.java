@@ -13,8 +13,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
@@ -36,8 +34,6 @@ public class ProductServiceImpl implements ProductService {
     private ModelMapper modelMapper;
     @Autowired
     private CategoryRepository categoryRepository;
-    
-    private final Logger log = LoggerFactory.getLogger(ProductServiceImpl.class);
 
     // Use relative paths that work on any OS
     private static final String IMAGE_DIRECTORY = System.getProperty("user.dir") + File.separator + "product-images" + File.separator;

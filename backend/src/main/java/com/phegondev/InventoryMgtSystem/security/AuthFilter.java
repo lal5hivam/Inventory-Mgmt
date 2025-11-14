@@ -7,8 +7,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -29,8 +27,6 @@ public class AuthFilter extends OncePerRequestFilter {
     private JwtUtils jwtUtils;
 	@Autowired
     private CustomUserDetailsService customUserDetailsService;
-    
-   final Logger log = LoggerFactory.getLogger(AuthFilter.class);
 
 
     @Override
