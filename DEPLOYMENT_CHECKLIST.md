@@ -26,10 +26,9 @@ Save the output - you'll need it for Render environment variables.
 4. Configure:
    - Name: inventory-backend
    - Root Directory: backend
-   - Environment: Java
-   - Build Command: mvn clean package -DskipTests
-   - Start Command: java -jar target/InventoryMgtSystem-0.0.1-SNAPSHOT.jar
+   - Environment: Docker
    - Instance Type: Free
+   (Dockerfile will handle build automatically)
 
 5. Set Environment Variables (see backend/.env.render.example):
    ```

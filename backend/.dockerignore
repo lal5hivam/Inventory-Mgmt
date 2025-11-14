@@ -1,0 +1,23 @@
+# Dockerfile-specific ignores
+target/
+!target/InventoryMgtSystem-*.jar
+
+# Maven
+.mvn/
+mvnw
+mvnw.cmd
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Application
+product-images/
+*.log
